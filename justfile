@@ -22,7 +22,7 @@ build-native:
     cargo build --release --features cli
 
 build-wasm:
-    wasm-pack build --target web --out-dir web/pkg --features wasm
+    wasm-pack build --target web --out-dir web/pkg --no-default-features --features wasm
 
 build-all: build-native build-wasm
 
