@@ -14,10 +14,9 @@ Latinga follows a strict **Shield-Engine-Heal** workflow:
 - **Dual Orthography**: Supports **Current** (sh, ch, o') and **Proposed** (ş, ç, ö) standards.
 - **Validation Mode**: Acts as a linter to find orthography errors in existing Latin texts.
 
-## Installation
-```
-$ cargo install --path .
-```
+## 🚀 Quick Start
+* **Installation:** See [English Guide](docs/en/INSTALL.md) or [O'zbekcha qo'llanma](docs/uz/OERNATISH.md).
+* **Web Demo:** Try it live at [chapani.github.io/latinga/](https://chapani.github.io/latinga/)
 
 ## Usage Examples
 ```

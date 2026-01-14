@@ -14,11 +14,10 @@ Latinga — /loˈtiŋɡa/ yani "lotinga" deb oʻqiladi. Chunki umid shulki kelaj
 - **Yagona H**: Kelgusi imloda faqat bitta H qoladi va X harfi H bilan almashtiriladi (masalan: `Xato` -> `Hato`).
 - **Hujjat turlari**: ilova LaTeX, HTML, XML, Markdown hujjat turlari bilan ishlay oladi.
 
-## Oʻrnatish
+## 🚀 Foydali Bogʻlamalar
 
-```
-$ cargo install --path .
-```
+* **Oʻrnatuv:** [Oʻzbekcha oʻrnatuv qoʻllanmasi](docs/uz/OERNATUV.md).
+* **Koʻrgazma:** Ilovani [chapani.github.io/latinga/](https://chapani.github.io/latinga/) jonli veb sahifasida sinab koʻring.
 
 ## Tezkor Foydalanish
 
