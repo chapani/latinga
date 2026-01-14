@@ -140,6 +140,13 @@ jobs:
       - name: Build WASM
         run: just build-wasm
 
+      # 1. Remove the .gitignore that wasm-pack generates so files aren't hidden
+      # 2. Create .nojekyll to ensure GitHub Pages serves files starting with "_"
+      - name: Prepare for Deployment
+        run: |
+          rm web/pkg/.gitignore
+          touch web/.nojekyll
+
       # Create a ZIP of the pkg folder for developers to download
       - name: Zip WASM Package
         if: github.event_name == 'release'
