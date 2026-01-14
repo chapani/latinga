@@ -1,0 +1,28 @@
+{
+  "name": "latinga",
+  "type": "module",
+  "description": "High-performance, Zero-Copy Uzbek Cyrillic-Latin transliterator.",
+  "version": "0.1.3",
+  "license": "MIT OR Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tilsevarlar-gurungu/latinga"
+  },
+  "files": [
+    "latinga_bg.wasm",
+    "latinga.js",
+    "latinga.d.ts"
+  ],
+  "main": "latinga.js",
+  "types": "latinga.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ],
+  "keywords": [
+    "uzbek",
+    "transliteration",
+    "cyrillic",
+    "latin",
+    "uzbekistan"
+  ]
+}
