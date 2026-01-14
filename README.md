@@ -28,11 +28,11 @@ $ latinga matn.txt
 ```
 
 ```
-# STDIN orqali amaldagi imloga oʻgirish
+# STDIN orqali amaldagi imloga oʻgirish (Joriy tartib)
 $ echo "кирилл" | latinga --joriy
 ```
 
 ```
 # Matndagi imlo xatolarini tekshirish
-$ latinga -s matn.txt
+$ latinga -t matn.txt
 ```

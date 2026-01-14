@@ -131,7 +131,6 @@ jobs:
       - name: Build WASM
         run: just build-wasm
 
-      # Fix for GitHub Pages (MIME types & Hidden files)
       - name: Prepare for Deployment
         run: |
           rm web/pkg/.gitignore
@@ -155,3 +154,26 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./web
           force_orphan: true
+
+  # =========================================================
+  # JOB 4: PUBLISH TO CRATES.IO (TRUSTED PUBLISHING)
+  # =========================================================
+  publish_crate:
+    name: Publish to Crates.io
+    # WAITS FOR EVERYTHING ELSE TO SUCCEED FIRST
+    needs: [test, build_binaries, deploy_web]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Authenticate with crates.io
+        uses: rust-lang/crates-io-auth-action@v1
+        id: auth
+
+      - name: Publish Crate
+        run: cargo publish --token ${{ steps.auth.outputs.token }}

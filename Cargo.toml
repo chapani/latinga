@@ -1,6 +1,6 @@
 [package]
 name = "latinga"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 description = "High-performance, Zero-Copy Uzbek Cyrillic-Latin transliterator."
 license = "MIT OR Apache-2.0"
