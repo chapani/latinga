@@ -1,0 +1,67 @@
+[package]
+name = "latinga"
+version = "0.1.0"
+edition = "2024"
+authors = ["Your Name <email@example.com>"]
+description = "High-performance, Zero-Copy Uzbek Cyrillic-Latin transliterator."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yourusername/latinga"
+keywords = ["uzbek", "transliteration", "cyrillic", "latin", "zero-copy"]
+categories = ["text-processing"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "latinga"
+required-features = ["cli"]
+
+[dependencies]
+# regex = "1.11"
+regex = { version = "1.11", default-features = false, features = ["std", "perf", "unicode-perl", "unicode-case"] }
+anyhow = "1.0"
+aho-corasick = "1.1"
+# serde = { version = "1.0", features = ["derive"] }
+serde = { version = "1.0", default-features = false, features = ["derive", "alloc"] }
+memmap2 = "0.9"
+
+# --- Optional Dependencies ---
+clap = { version = "4.5", features = ["derive"], optional = true }
+glob = { version = "0.3", optional = true }
+tempfile = { version = "3.12", optional = true }
+rayon = { version = "1.10", optional = true }
+wasm-bindgen = { version = "0.2.106", optional = true }
+serde-wasm-bindgen = {version = "0.4", optional = true}
+
+[features]
+default = []
+wasm = ["wasm-bindgen", "serde-wasm-bindgen"]
+cli = ["clap", "glob", "tempfile", "rayon"]
+
+# --- Dev Dependencies (Platform Gated) ---
+
+# 1. Native-only dev-dependencies (CLI tests & Benchmarks)
+# These are IGNORED when compiling for WASM, fixing the Rayon error.
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
+criterion = "0.5"  # Moved here!
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3.12"
+glob = "0.3"
+
+# 2. WASM-only dev-dependencies
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+wasm-bindgen-test = "0.3.56"
+
+[[bench]]
+name = "benchmark"
+harness = false
+
+[profile.release]
+# opt-level = 3
+# lto = "fat"
+# codegen-units = 1
+# panic = "abort"
+# strip = true
+# debug = false
+debug = true

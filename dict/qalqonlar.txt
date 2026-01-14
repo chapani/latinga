@@ -1,0 +1,24 @@
+# Global Brands
+Xerox
+Linux
+Netflix
+FedEx
+Rolex
+SpaceX
+Excel
+
+# Technology & Standards
+Nginx
+DirectX
+XML
+XHTML
+Xen
+Unix
+Nix
+NixOS
+
+# Dasturlovdagi atamalar
+Regex
+txt
+xlsx
+docx

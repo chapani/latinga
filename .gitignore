@@ -1,0 +1,29 @@
+# --- Rust / Cargo ---
+/target/
+**/*.rs.bk
+
+# Keep Cargo.lock for binary projects to ensure reproducible builds
+# Cargo.lock 
+
+# --- Editor: Vim / Neovim ---
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+Session.vim
+.netrwhist
+*~
+*.un~
+
+# --- Project Specific ---
+/tmp/
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+flamegraph.svg
+perf.data
+perf.data.old
+
+/web/pkg/
